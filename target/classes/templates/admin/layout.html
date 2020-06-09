@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header">
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <title>Admin</title>
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" th:href="@{/admin/img/favicon.ico}" type="image/x-icon">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/bootstrap.min.css}">
+    <!-- font awesome CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/font-awesome.min.css}">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/owl.carousel.css}">
+    <link rel="stylesheet" th:href="@{/admin/css/owl.theme.css}">
+    <link rel="stylesheet" th:href="@{/admin/css/owl.transitions.css}">
+    <!-- meanmenu CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/meanmenu/meanmenu.min.css}">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/animate.css}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/normalize.css}">
+    <!-- wave CSS
+        ============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/wave/waves.min.css}">
+    <link rel="stylesheet" th:href="@{/admin/css/wave/button.css}">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/scrollbar/jquery.mCustomScrollbar.min.css}">
+    <!-- Notika icon CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/notika-custom-icon.css}">
+    <!-- Data Table JS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/jquery.dataTables.min.css}">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/main.css}">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/style.css}">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/admin/css/responsive.css}">
+    <!-- modernizr JS
+		============================================ -->
+    <script th:src="@{/admin/js/vendor/modernizr-2.8.3.min.js}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+</head>
+
+<body>
+<th:block th:fragment="nav-bar">
+    <!-- Start Header Top Area -->
+    <div class="header-top-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="padding-left: 34%">
+                    <div class="main-menu-area mg-tb-40">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
+                                        <li><a th:href="@{/admin/dashboard}"><i class="notika-icon notika-bar-chart"></i> Charts</a>
+                                        </li>
+                                        <li><a th:href="@{/admin/table}"><i class="notika-icon notika-windows"></i> Tables</a>
+                                        </li>
+                                        <li><a th:href="@{/}"><i class="notika-icon notika-form"></i> Forms</a>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Header Top Area -->
+</th:block>
+
+<th:block th:fragment="footer">
+<footer>    <!-- Start Footer area-->
+    <div class="footer-copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="footer-copy-right">
+                        <p>Copyright © 2018
+                            . All rights reserved. Template by <a>Colorlib</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- End Footer area-->
+</th:block>
+
+<th:block th:fragment="js">
+
+    <!-- jquery
+        ============================================ -->
+    <script th:src="@{/admin/js/vendor/jquery-1.12.4.min.js}"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script th:src="@{/admin/js/bootstrap.min.js}"></script>
+    <!-- wow JS
+        ============================================ -->
+    <script th:src="@{/admin/js/wow.min.js}"></script>
+    <!-- price-slider JS
+        ============================================ -->
+    <script th:src="@{/admin/js/jquery-price-slider.js}"></script>
+    <!-- owl.carousel JS
+        ============================================ -->
+    <script th:src="@{/admin/js/owl.carousel.min.js}"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script th:src="@{/admin/js/jquery.scrollUp.min.js}"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script th:src="@{/admin/js/meanmenu/jquery.meanmenu.js}"></script>
+    <!-- counterup JS
+        ============================================ -->
+    <script th:src="@{/admin/js/counterup/jquery.counterup.min.js}"></script>
+    <script th:src="@{/admin/js/counterup/waypoints.min.js}"></script>
+    <script th:src="@{/admin/js/counterup/counterup-active.js}"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script th:src="@{/admin/js/scrollbar/jquery.mCustomScrollbar.concat.min.js}"></script>
+    <!-- sparkline JS
+        ============================================ -->
+    <script th:src="@{/admin/js/sparkline/jquery.sparkline.min.js}"></script>
+    <script th:src="@{/admin/js/sparkline/sparkline-active.js}"></script>
+    <!-- flot JS
+        ============================================ -->
+    <script th:src="@{/admin/js/flot/jquery.flot.js}"></script>
+    <script th:src="@{/admin/js/flot/jquery.flot.resize.js}"></script>
+    <script th:src="@{/admin/js/flot/flot-active.js}"></script>
+    <!-- knob JS
+        ============================================ -->
+    <script th:src="@{/admin/js/knob/jquery.knob.js}"></script>
+    <script th:src="@{/admin/js/knob/jquery.appear.js}"></script>
+    <script th:src="@{/admin/js/knob/knob-active.js}"></script>
+    <!--  Chat JS
+        ============================================ -->
+    <script th:src="@{/admin/js/todo/jquery.todo.js}"></script>
+    <!--  wave JS
+        ============================================ -->
+    <script th:src="@{/admin/js/wave/waves.min.js}"></script>
+    <script th:src="@{/admin/js/wave/wave-active.js}"></script>
+    <!-- plugins JS
+        ============================================ -->
+    <script th:src="@{/admin/js/plugins.js}"></script>
+    <!-- Data Table JS
+        ============================================ -->
+    <script th:src="@{/admin/js/data-table/jquery.dataTables.min.js}"></script>
+    <script th:src="@{/admin/js/data-table/data-table-act.js}"></script>
+    <!-- main JS
+        ============================================ -->
+    <script th:src="@{/admin/js/main.js}"></script>
+    <script th:src="@{/home/js/url.js}"></script>
+
+
+
+<!--    <script th:src="@{/admin/js/table/table.js}"></script>-->
+</th:block>
+
+
+</body>
+</html>
