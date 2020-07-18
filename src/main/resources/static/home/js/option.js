@@ -45,7 +45,7 @@ contacts.selectContact = function () {
 var sicks = {} || sicks
 sicks.selectSick = function () {
     $.ajax({
-        url: url +'/json/list/sick',
+        url: url +'json/list/sick',
         method: 'GET',
         datatype: 'JSON',
         success: function (data) {

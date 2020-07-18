@@ -1,6 +1,7 @@
 package com.project.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -13,6 +14,8 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_person;
+
+    @Column(unique=true)
     private String passportNumber;
     private String fullName;
     private int yob;

@@ -9,7 +9,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "districts")
-public class District {
+public class District extends BasicModel{
 
     @Id
     @Column(name = "id_district", unique = true, columnDefinition = "VARCHAR(20)")

@@ -2,9 +2,12 @@ package com.project.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import javax.persistence.*;
-
+@Data
+@AllArgsConstructor
 @Entity
 @Table(name = "contact")
 public class Contact {
@@ -22,30 +25,8 @@ public class Contact {
     @JoinColumn(name = "id_person")
     private Person person;
 
-    public Contact() {
-    }
+    public Contact(){}
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id_contact) {
-        this.id = id_contact;
-    }
 
-    public ListContact getListContact() {
-        return listContact;
-    }
-
-    public void setListContact(ListContact listContact) {
-        this.listContact = listContact;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
 }

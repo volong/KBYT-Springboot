@@ -80,4 +80,5 @@ public class PersonController {
     public List<Symptom> findSymptomsByPersonId(@PathVariable("id_person") Long id_person) {
         return symptomServiceImpl.findSymptomsByPersonId(id_person);
     }
+
 }

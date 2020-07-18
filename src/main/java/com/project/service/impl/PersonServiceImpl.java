@@ -70,5 +70,4 @@ public class PersonServiceImpl implements PersonService {
         return personRepository.findListPersonByContact(startDate, endDate, id_contact);
     }
 
-
 }

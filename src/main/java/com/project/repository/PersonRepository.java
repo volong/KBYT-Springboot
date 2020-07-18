@@ -32,4 +32,5 @@ public interface PersonRepository extends PagingAndSortingRepository<Person, Lon
     @Query(value="SELECT * FROM contact inner join listcontact on contact.id_contact=listcontact.id_contact inner join person on contact.id_person = person.id_person WHERE person.date >= :startDate AND person.date <= :endDate and listcontact.id_contact = :contact", nativeQuery = true)
     List<Person> findListPersonByContact(@Param("startDate") Date startDate, @Param("endDate") Date endDate, @Param("contact") Long id_contact);
 
+
 }

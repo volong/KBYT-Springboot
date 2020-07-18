@@ -7,7 +7,7 @@ provinces.selectProvince = function () {
         success: function (data) {
             $('#province').empty();
             $('#province').append(
-                `<option value="">--Chọn tỉnh thành--</option>`
+                `<option value="1">--Chọn tỉnh thành--</option>`
             )
             $.each(data, function (i, province) {
                 $('#province').append(
@@ -26,7 +26,7 @@ provinces.selectProvince = function () {
                 success: function (data) {
                     $('#district').empty();
                     $('#district').append(
-                        `<option value="">--Chọn Quận / Huyện--</option>`
+                        `<option value="1">--Chọn Quận / Huyện--</option>`
                     )
                     $.each(data, function (i, district) {
                             $('#district').append(
@@ -45,7 +45,7 @@ provinces.selectProvince = function () {
                             success: function (data) {
                                 $('#ward').empty();
                                 $('#ward').append(
-                                    `<option value="">--Chọn Phường / Xã--</option>`
+                                    `<option value="1">--Chọn Phường / Xã--</option>`
                                 )
                                 debugger;
                                 $.each(data, function (i, ward) {
