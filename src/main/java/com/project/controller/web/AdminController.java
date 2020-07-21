@@ -20,18 +20,18 @@ public class AdminController {
 
     @GetMapping("/chart")
     public String showDashboard() {
-        return "/admin/chart";
+        return "admin/chart";
     }
 
 
     @GetMapping("/table")
     public String table(){
-        return "/admin/table";
+        return "admin/table";
     }
 
     @GetMapping("/personal/{id}")
     public ModelAndView showPerson(@PathVariable("id") Long id) {
-        ModelAndView modelAndView = new ModelAndView("/admin/personal");
+        ModelAndView modelAndView = new ModelAndView("admin/personal");
         modelAndView.addObject("id", id);
         return modelAndView;
     }
