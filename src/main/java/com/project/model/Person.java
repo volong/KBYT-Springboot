@@ -15,6 +15,7 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_person;
 
+    @Column(unique=false)
     private String passportNumber;
     private String fullName;
     private int yob;
