@@ -6,7 +6,7 @@
     [ Validate after type ]*/
     $('.validate-input .input100').each(function () {
         $(this).on('blur', function () {
-            if (validate(this) ===false || validate1(this) === false) {
+            if (validate(this) ===false || validate1(this) === false || validate2(this) === false) {
                 showValidate(this);
             } else {
                 $(this).parent().addClass('true-validate');
@@ -68,7 +68,7 @@
 
     function validate2(input) {
         if ($(input).attr('type') === 'passportNumber' || $(input).attr('name') === 'passportNumber') {
-            if ($(input).val().trim().match(/(([0-9]{15})\b)/gi) == null) {
+            if ($(input).val().trim().match(/(([0-9])\b)/gi) == null) {
                 return false;
             }
         } else {
