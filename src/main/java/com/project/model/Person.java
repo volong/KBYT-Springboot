@@ -18,14 +18,16 @@ public class Person {
     @Column(unique=false)
     private String passportNumber;
     private String fullName;
-    private int yob;
+    private Date yob;
     private String gender;
     private String phoneNumber;
     private String email;
     private String street;                  //đường, thôn, xóm.....
     private String actIn14days;             //action trong vòng 14 ngày qua
-    private int khaiho;
+    private Long khaiho;
     private Date date;
+    private Long declared;
+    private Long isDelete;
 
     @ManyToOne
     @JoinColumn(name = "id_province")
@@ -55,8 +57,10 @@ public class Person {
     public Person() {
     }
 
-    public Person(String passportNumber, String fullName, String gender, int yob, String phoneNumber,
-                  String email, String street, String actIn14days, int khaiho, Date date) {
+    public Person(Long id_person, String passportNumber, String fullName, String gender, Date yob, String phoneNumber,
+                  String email, String street, String actIn14days, Long khaiho, Date date, String id_province, String id_district, String id_ward, Long declared, Long isDelete
+    ) {
+        this.id_person = id_person;
         this.passportNumber = passportNumber;
         this.fullName = fullName;
         this.gender = gender;
@@ -67,14 +71,16 @@ public class Person {
         this.actIn14days = actIn14days;
         this.khaiho = khaiho;
         this.date = date;
+        this.declared = declared;
+        this.isDelete = isDelete;
     }
 
     public Long getId_person() {
         return id_person;
     }
 
-    public void setId_person(Long id) {
-        this.id_person = id;
+    public void setId_person(Long id_person) {
+        this.id_person = id_person;
     }
 
     public String getPassportNumber() {
@@ -93,11 +99,11 @@ public class Person {
         this.fullName = fullName;
     }
 
-    public int getYob() {
+    public Date getYob() {
         return yob;
     }
 
-    public void setYob(int yob) {
+    public void setYob(Date yob) {
         this.yob = yob;
     }
 
@@ -142,11 +148,11 @@ public class Person {
         this.actIn14days = actIn14days;
     }
 
-    public int getKhaiho() {
+    public Long getKhaiho() {
         return khaiho;
     }
 
-    public void setKhaiho(int khaiho) {
+    public void setKhaiho(Long khaiho) {
         this.khaiho = khaiho;
     }
 
@@ -157,8 +163,22 @@ public class Person {
     public void setDate(Date date) {
         this.date = date;
     }
-    //Getter and Setter for National, District, Province, Ward
 
+    public Long getDeclared() {
+        return declared;
+    }
+
+    public void setDeclared(Long declared) {
+        this.declared = declared;
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete){
+        this.isDelete = isDelete;
+    }
 
     public Province getProvince() {
         return province;
@@ -207,5 +227,7 @@ public class Person {
     public void setSymptoms(Set<Symptom> symptoms) {
         this.symptoms = symptoms;
     }
+
+
 
 }

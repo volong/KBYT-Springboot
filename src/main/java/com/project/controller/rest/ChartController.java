@@ -11,18 +11,16 @@ import com.project.service.impl.ContactListServiceImpl;
 import com.project.service.impl.PersonServiceImpl;
 import com.project.service.impl.SymptomListServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/json")
+@RequestMapping("/api")
 public class ChartController {
 
     @Autowired
@@ -34,13 +32,11 @@ public class ChartController {
     @Autowired
     private PersonServiceImpl personService;
 
-
     @GetMapping("/countsymptom/{startDate}/{endDate}")
     public List<ISaticalSymptom> countSymptom(
             @PathVariable("startDate") Date startDate, @PathVariable("endDate") Date endDate) {
         return symptomListService.countListSymptom(startDate, endDate);
     }
-
 
     @GetMapping("/countcontact/{startDate}/{endDate}")
     public List<ISaticalContact> countContact(

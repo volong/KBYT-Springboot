@@ -249,6 +249,7 @@ chart.person = function () {
                             }
                         }]
                     },
+
                     onClick:function(e) {
                         var activePoints = person.getElementsAtEvent(e);
                         var selectedIndex = activePoints[0]._index;

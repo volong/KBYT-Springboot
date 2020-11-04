@@ -26,7 +26,7 @@ provinces.selectProvince = function () {
                 success: function (data) {
                     $('#district').empty();
                     $('#district').append(
-                        `<option value="1">--Chọn Quận / Huyện--</option>`
+                        `<option value="1">--Chọn quận huyện--</option>`
                     )
                     $.each(data, function (i, district) {
                             $('#district').append(
@@ -45,7 +45,7 @@ provinces.selectProvince = function () {
                             success: function (data) {
                                 $('#ward').empty();
                                 $('#ward').append(
-                                    `<option value="1">--Chọn Phường / Xã--</option>`
+                                    `<option value="1">--Chọn phường xã--</option>`
                                 )
                                 debugger;
                                 $.each(data, function (i, ward) {

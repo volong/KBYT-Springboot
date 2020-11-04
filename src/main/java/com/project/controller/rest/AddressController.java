@@ -8,15 +8,13 @@ import com.project.service.impl.DistrictServiceImpl;
 import com.project.service.impl.ProvinceServiceImpl;
 import com.project.service.impl.WardServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/json")
+@RequestMapping("/api")
 public class AddressController {
     @Autowired
     private ProvinceServiceImpl provinceServiceImpl;
@@ -27,19 +25,18 @@ public class AddressController {
     @Autowired
     private WardServiceImpl wardServiceImpl;
 
-     @GetMapping("/province")
+     @GetMapping("/provinces")
     public List<Province> listProvince() {
         return provinceServiceImpl.findAll();
     }
 
-    @GetMapping("/district/{id}")
+    @GetMapping("/districts/{id}")
          public List<District> listDistrict(@PathVariable("id")String id){
 
          return districtServiceImpl.findAllByProvince(provinceServiceImpl.findById(id).orElse(null));
         }
 
-
-    @GetMapping("/ward/{id}")
+    @GetMapping("/wards/{id}")
     public List<Ward> listWard(@PathVariable("id") String id) {
          return wardServiceImpl.findAllByDistrict(districtServiceImpl.findById(id).orElse(null));
     }

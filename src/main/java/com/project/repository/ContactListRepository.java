@@ -13,7 +13,7 @@ import java.util.List;
 
 @Component
 public interface ContactListRepository extends PagingAndSortingRepository<ListContact, Long> {
-    @Query(value=" SELECT count(*) as count,listcontact.contact as listContact, listContact.id_contact as contactId FROM contact inner join listcontact on contact.id_contact=listcontact.id_contact inner join person on contact.id_person = person.id_person WHERE person.date >= :startDate AND person.date <= :endDate group by listcontact.contact, listcontact.id_contact;", nativeQuery = true)
+    @Query(value=" SELECT count(*) as count,listcontact.contact as listContact, listContact.id_contact as contactId FROM contact inner join listcontact on contact.id_contact=listcontact.id_contact inner join person on contact.id_person = person.id_person WHERE declared = 1 and is_delete = 0 and person.date >= :startDate AND person.date <= :endDate group by listcontact.contact, listcontact.id_contact;", nativeQuery = true)
     List<ISaticalContact> countListContact(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
 
 }
