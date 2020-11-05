@@ -58,28 +58,38 @@ public class PersonController {
     void update(@Param("full_name") String full_name, @Param("passport_number") String passport_number, @Param("phone_number") String phone_number,
                 @Param("email") String email, @Param("yob") java.sql.Date yob, @Param("gender") String gender, @Param("id_province") String id_province,
                 @Param("id_district") String id_district, @Param("id_ward") String id_ward, @Param("street") String street,
-                @Param("act_in14days") String act_in14days, @Param("date") Date date, @Param("khaiho") Long khaiho, @Param("declared") Long declared, @Param("id_person") Long id_person){
-        personServiceImpl.update(full_name, passport_number, phone_number, email, yob, gender, id_province, id_district, id_ward, street, act_in14days, date, khaiho,declared, id_person);
+                @Param("act_in14days") String act_in14days, @Param("date") Date date, @Param("khaiho") Long khaiho, @Param("declared") Long declared, @Param("is_delete") Long is_delete, @Param("id_person") Long id_person){
+        personServiceImpl.update(full_name, passport_number, phone_number, email, yob, gender, id_province, id_district, id_ward, street, act_in14days, date, khaiho, declared, is_delete, id_person);
     }
 
     // Save Symptom data with id_person
     @PostMapping(value="/addsymptom" )
     void saveSymptom(
-            @Param("id_symptom") Long id_symptom, @Param("id_person") Long id_person) {
-        symptomServiceImpl.saveSymptom(id_symptom, id_person);
+            @Param("param[]") Long[] param, @Param("id_person") Long id_person) {
+        int i;
+        for (i = 0; i < param.length; i++) {
+            Long id_symptom = param[i];
+            symptomServiceImpl.saveSymptom(id_symptom, id_person);
+        }
     }
 
     // Save Contact data with id_person
     @PostMapping(value = "/addcontact")
-    void saveContact(@Param("id_contact") Long id_contact, @Param("id_person") Long id_person){
-        contactServiceImpl.saveContact(id_contact, id_person);
-    }
+    void saveContact(@Param("param[]") Long[] param, @Param("id_person") Long id_person){
+        int i;
+        for (i = 0; i < param.length; i++) {
+            Long id_contact = param[i];
+            contactServiceImpl.saveContact(id_contact, id_person);
+        }    }
 
     // Save Sick data with id_person
     @PostMapping(value = "/addsick")
-    void saveSick(@Param("id_sick") Long id_sick, @Param("id_person") Long id_person) {
-        sickServiceImpl.saveSick(id_sick, id_person);
-    }
+    void saveSick(@Param("param[]") Long[] param, @Param("id_person") Long id_person) {
+        int i;
+        for (i = 0; i < param.length; i++) {
+            Long id_sick = param[i];
+            sickServiceImpl.saveSick(id_sick, id_person);
+        }    }
 
     @PutMapping(value = "/delete")
     void deleteById(@Param("id_person") Long id_person){

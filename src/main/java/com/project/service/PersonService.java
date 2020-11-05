@@ -34,7 +34,7 @@ public interface PersonService {
     void update(@Param("full_name") String full_name, @Param("passport_number") String passport_number, @Param("phone_number") String phone_number,
               @Param("email") String email, @Param("yob") Date yob, @Param("gender") String gender, @Param("id_province") String id_province,
               @Param("id_district") String id_district, @Param("id_ward") String id_ward, @Param("street") String street,
-              @Param("act_in14days") String act_in14days, @Param("date") Date date, @Param("khaiho") Long khaiho, @Param("declared") Long declared, @Param("id_person") Long id_person);
+              @Param("act_in14days") String act_in14days, @Param("date") Date date, @Param("khaiho") Long khaiho, @Param("declared") Long declared, @Param("is_delete") Long is_delete, @Param("id_person") Long id_person);
 
     void create(@RequestBody Person person);
 

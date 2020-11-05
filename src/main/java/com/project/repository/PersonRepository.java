@@ -60,11 +60,11 @@ public interface PersonRepository extends PagingAndSortingRepository<Person, Lon
     void create(@RequestBody Person person);
 
     @Modifying
-    @Query(value = "UPDATE person SET full_name = :full_name , passport_number = :passport_number, phone_number = :phone_number, email = :email, yob = :yob, gender = :gender, id_province = :id_province, id_district = :id_district, id_ward = :id_ward, street = :street, act_in14days =:act_in14days, date = :date, khaiho = :khaiho, declared = :declared WHERE id_person = :id_person", nativeQuery = true)
+    @Query(value = "UPDATE person SET full_name = :full_name , passport_number = :passport_number, phone_number = :phone_number, email = :email, yob = :yob, gender = :gender, id_province = :id_province, id_district = :id_district, id_ward = :id_ward, street = :street, act_in14days =:act_in14days, date = :date, khaiho = :khaiho, declared = :declared, is_delete = :is_delete WHERE id_person = :id_person", nativeQuery = true)
     void update(@Param("full_name") String full_name, @Param("passport_number") String passport_number, @Param("phone_number") String phone_number,
                @Param("email") String email, @Param("yob") Date yob, @Param("gender") String gender, @Param("id_province") String id_province,
                @Param("id_district") String id_district, @Param("id_ward") String id_ward, @Param("street") String street,
-               @Param("act_in14days") String act_in14days, @Param("date") Date date, @Param("khaiho") Long khaiho, @Param("declared") Long declared, @Param("id_person") Long id_person);
+               @Param("act_in14days") String act_in14days, @Param("date") Date date, @Param("khaiho") Long khaiho, @Param("declared") Long declared, @Param("is_delete") Long is_delete, @Param("id_person") Long id_person);
 
     @Modifying
     @Query(value="UPDATE person SET id_province = :id_province, id_district = :id_district, id_ward = :id_ward WHERE id_person = :personId", nativeQuery = true)

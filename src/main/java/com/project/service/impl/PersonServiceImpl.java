@@ -76,8 +76,8 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public void update(String full_name, String passport_number, String phone_number, String email, Date yob, String gender, String id_province, String id_district, String id_ward, String street, String act_in14days, Date date, Long khaiho,Long declared, Long id_person) {
-        personRepository.update(full_name, passport_number, phone_number, email, yob, gender, id_province, id_district, id_ward, street, act_in14days, date, khaiho, declared, id_person);
+    public void update(String full_name, String passport_number, String phone_number, String email, Date yob, String gender, String id_province, String id_district, String id_ward, String street, String act_in14days, Date date, Long khaiho,Long declared,Long is_delete, Long id_person) {
+        personRepository.update(full_name, passport_number, phone_number, email, yob, gender, id_province, id_district, id_ward, street, act_in14days, date, khaiho, declared, is_delete, id_person);
     }
 
     @Override
